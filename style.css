@@ -32,3 +32,17 @@ button:hover {
     margin-top: 15px;
     color: #d9534f;
 }
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    input, button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    #result {
+        font-size: 16px;
+    }
+}
