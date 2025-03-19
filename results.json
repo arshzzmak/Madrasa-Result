@@ -1,5 +1,8 @@
 [
     {"admissionNo": "12345", "name": "Ali", "result": "Passed"},
     {"admissionNo": "67890", "name": "Aisha", "result": "Failed"},
-    {"admissionNo": "11223", "name": "Ahmed", "result": "Passed"}
+    {"admissionNo": "11223", "name": "Ahmed", "result": "Passed"},    
+    {"admissionNo": "33445", "name": "Bilal", "result": "Passed"},
+    {"admissionNo": "55667", "name": "Maryam", "result": "Failed"},
+    {"admissionNo": "88990", "name": "Zaid", "result": "Passed"}
 ]
