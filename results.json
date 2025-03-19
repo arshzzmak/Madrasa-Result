@@ -1,0 +1,5 @@
+[
+    {"admissionNo": "12345", "name": "Ali", "result": "Passed"},
+    {"admissionNo": "67890", "name": "Aisha", "result": "Failed"},
+    {"admissionNo": "11223", "name": "Ahmed", "result": "Passed"}
+]
