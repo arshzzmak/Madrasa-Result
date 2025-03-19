@@ -1,8 +1,62 @@
 [
-    {"admissionNo": "12345", "name": "Ali", "result": "Passed"},
-    {"admissionNo": "67890", "name": "Aisha", "result": "Failed"},
-    {"admissionNo": "11223", "name": "Ahmed", "result": "Passed"},    
-    {"admissionNo": "33445", "name": "Bilal", "result": "Passed"},
-    {"admissionNo": "55667", "name": "Maryam", "result": "Failed"},
-    {"admissionNo": "88990", "name": "Zaid", "result": "Passed"}
+    {
+        "admission_no": "1101",
+        "name": "Zayan",
+        "fiqh": 45,
+        "aqeeda": 42,
+        "lisan": 43,
+        "akhlaq": 41,
+        "quran": 40,
+        "total_marks": 211,
+        "percentage": 84.4,
+        "result": "Passed"
+    },
+    {
+        "admission_no": "1102",
+        "name": "Izyan",
+        "fiqh": 40,
+        "aqeeda": 40,
+        "lisan": 40,
+        "akhlaq": 38,
+        "quran": 31,
+        "total_marks": 189,
+        "percentage": 75.6,
+        "result": "Failed"
+    },
+    {
+        "admission_no": "1103",
+        "name": "Abiyahajara",
+        "fiqh": 46,
+        "aqeeda": 40,
+        "lisan": 38,
+        "akhlaq": 35,
+        "quran": 30,
+        "total_marks": 189,
+        "percentage": 75.6,
+        "result": "Failed"
+    },
+    {
+        "admission_no": "1104",
+        "name": "Anam Ali",
+        "fiqh": 48,
+        "aqeeda": 49,
+        "lisan": 49,
+        "akhlaq": 50,
+        "quran": 50,
+        "total_marks": 246,
+        "percentage": 98.4,
+        "result": "Passed"
+    },
+    {
+        "admission_no": "1105",
+        "name": "Fatima Zahra",
+        "fiqh": 38,
+        "aqeeda": 39,
+        "lisan": 41,
+        "akhlaq": 40,
+        "quran": 42,
+        "total_marks": 200,
+        "percentage": 80.0,
+        "result": "Passed"
+    }
 ]
