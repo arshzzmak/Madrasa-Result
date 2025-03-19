@@ -13,15 +13,16 @@
     <p id="result"></p>
 
     <script>
-        function searchResult() {
-            var admissionNo = document.getElementById("admissionNo").value;
-            // Replace with actual result data later
-            if (admissionNo === "12345") {
-                document.getElementById("result").innerText = "Result: Passed";
-            } else {
-                document.getElementById("result").innerText = "No result found!";
-            }
+    async function searchResult() {
+        let admissionNo = document.getElementById("admissionNo").value;
+        let response = await fetch("results.json");
+        let data = await response.json();
+
+        let student = data.find(student => student.admissionNo === admissionNo);
+        if (student) {
+            document.getElementById("result").innerText = student.name + " - Result: " + student.result;
+        } else {
+            document.getElementById("result").innerText = "No result found!";
         }
-    </script>
-</body>
-</html>
+    }
+</script>
