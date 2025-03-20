@@ -3,8 +3,8 @@
         let admissionNo = document.getElementById("admissionNo").value.trim();
 
         try {
-            // Fetch the results.json file
-            let response = await fetch("https://raw.githubusercontent.com/arshzzmak/Madrasa-Result-/main/results.json");
+            // Fetch the results.json file from GitHub Pages
+            let response = await fetch("https://arshzzmak.github.io/Madrasa-Result-/results.json");
             if (!response.ok) {
                 throw new Error("Failed to load results.");
             }
@@ -40,4 +40,4 @@
             document.getElementById("result").innerHTML = "<span style='color:red;'>Error loading results.</span>";
         }
     }
-                                                </script>
+</script>
