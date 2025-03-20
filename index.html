@@ -7,14 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>IZZATHUL ISLAM MADRASA</h1>
-    <h2>Annual Exam Result 2025</h2>
+
+    <div class="header">
+        <h1>IZZATHUL ISLAM MADRASA</h1>
+        <h2>Annual Examination Result 2025</h2>
+    </div>
+    
     <p>Enter your admission number to check results:</p>
     <input type="text" id="admissionNo" placeholder="Enter Admission No">
     <button onclick="searchResult()">Check Result</button>
-    <p id="result"></p>
+    
+    <div id="resultContainer" class="hidden">
+        <div class="name-box">
+            <p><strong>Name:</strong> <span id="studentName"></span></p>
+        </div>
+        
+        <p><strong>Admission no:</strong> <span id="admissionNoDisplay"></span> &nbsp;&nbsp;&nbsp; <strong>STD:</strong> <span id="studentStd"></span></p>
+        
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Mark</th>
+            </tr>
+            <tr><td>Lisan</td><td id="lisan"></td></tr>
+            <tr><td>Fiqh</td><td id="fiqh"></td></tr>
+            <tr><td>Aqeeda</td><td id="aqeeda"></td></tr>
+            <tr><td>Akhlaq</td><td id="akhlaq"></td></tr>
+            <tr><td>Quran</td><td id="quran"></td></tr>
+        </table>
+        
+        <div class="marks-container">
+            <div class="marks-box"><strong>Total Marks:</strong> <span id="total"></span></div>
+            <div class="marks-box"><strong>Percentage:</strong> <span id="percentage"></span>%</div>
+        </div>
+        
+        <div class="status-box">
+            <strong>Status:</strong> <span id="status"></span>
+        </div>
+    </div>
 
-    <!-- Link to external JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
