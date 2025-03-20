@@ -18,24 +18,33 @@
     async function searchResult() {
         let admissionNo = document.getElementById("admissionNo").value;
 
-        // Fetch JSON data
-        let response = await fetch("https://raw.githubusercontent.com/arshzzmak/Madrasa-Result/main/results.json");
-        let data = await response.json();
+        try {
+            // Fetch JSON data (Updated repository link)
+            let response = await fetch("https://raw.githubusercontent.com/arshzzmak/Madrasa-Result-/main/results.json");
+            if (!response.ok) {
+                throw new Error("Failed to load results.");
+            }
 
-        // Search for student
-        let student = data.find(student => student.admissionNo === admissionNo);
-        if (student) {
-            document.getElementById("result").innerText = 
-                `Name: ${student.name}
-                 Fiqh: ${student.fiqh}
-                 Aqeedah: ${student.aqeeda}
-                 Lisan: ${student.lisan}
-                 Akhlaq: ${student.akhlaq}
-                 Quran: ${student.quran}
-                 Total: ${student.total}
-                 Percentage: ${student.percentage}%`;
-        } else {
-            document.getElementById("result").innerText = "No result found!";
+            let data = await response.json();
+
+            // Search for student
+            let student = data.find(student => student.admissionNo === admissionNo);
+            if (student) {
+                document.getElementById("result").innerHTML = `
+                    <strong>Name:</strong> ${student.name} <br>
+                    <strong>Fiqh:</strong> ${student.fiqh} <br>
+                    <strong>Aqeedah:</strong> ${student.aqeeda} <br>
+                    <strong>Lisan:</strong> ${student.lisan} <br>
+                    <strong>Akhlaq:</strong> ${student.akhlaq} <br>
+                    <strong>Quran:</strong> ${student.quran} <br>
+                    <strong>Total:</strong> ${student.total} <br>
+                    <strong>Percentage:</strong> ${student.percentage}% <br>
+                `;
+            } else {
+                document.getElementById("result").innerText = "No result found!";
+            }
+        } catch (error) {
+            document.getElementById("result").innerText = "Error loading results.";
         }
     }
     </script>
