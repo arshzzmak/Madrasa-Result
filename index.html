@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div id="searchContainer">
         <h1>IZZATHUL ISLAM MADRASA</h1>
         <h2>Annual Exam Result</h2>
@@ -16,22 +17,23 @@
 
     <div id="resultContainer" class="hidden">
         <h2>Exam Result</h2>
-        <div id="studentDetails">
-            <p><strong>Name:</strong> <span id="studentName"></span></p>
-            <p><strong>Admission No:</strong> <span id="admissionNoDisplay"></span></p>
-            <p><strong>Standard:</strong> <span id="studentStd"></span></p>
-        </div>
-        <table id="resultTable">
+        <p><strong>Name:</strong> <span id="studentName"></span></p>
+        <p><strong>Admission No:</strong> <span id="admissionNoDisplay"></span></p>
+        <p><strong>Standard:</strong> <span id="studentStd"></span></p>
+
+        <table>
             <tr><th>Subject</th><th>Marks</th></tr>
             <tr><td>Lisan</td><td id="lisan"></td></tr>
             <tr><td>Fiqh</td><td id="fiqh"></td></tr>
             <tr><td>Aqeeda</td><td id="aqeeda"></td></tr>
             <tr><td>Akhlaq</td><td id="akhlaq"></td></tr>
             <tr><td>Quran</td><td id="quran"></td></tr>
-            <tr><td><strong>Total</strong></td><td id="total"></td></tr>
-            <tr><td><strong>Percentage</strong></td><td id="percentage"></td></tr>
         </table>
+
+        <p><strong>Total:</strong> <span id="total"></span></p>
+        <p><strong>Percentage:</strong> <span id="percentage"></span>%</p>
         <p><strong>Status:</strong> <span id="status"></span></p>
+
         <button onclick="resetSearch()">Search Again</button>
     </div>
 
