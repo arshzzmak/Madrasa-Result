@@ -2,7 +2,7 @@ async function searchResult() {
     let admissionNo = document.getElementById("admissionNo").value.trim();
 
     try {
-        https://raw.githubusercontent.com/arshzzmak/Madrasa-Result-/main/results.json
+        let response = await fetch("https://raw.githubusercontent.com/arshzzmak/Madrasa-Result-/main/results.json")
         if (!response.ok) {
             throw new Error("Failed to load results.");
         }
