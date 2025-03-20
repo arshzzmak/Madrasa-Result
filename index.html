@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madrasa Annual Exam Results</title>
+    <title>IZZATHUL ISLAM MADRASA - Exam Results</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="searchContainer">
-        <h1>Madrasa Name</h1>
+        <h1>IZZATHUL ISLAM MADRASA</h1>
         <h2>Annual Exam Result</h2>
         <input type="text" id="admissionNo" placeholder="Enter Admission Number">
         <button onclick="searchResult()">Search</button>
@@ -16,10 +16,12 @@
 
     <div id="resultContainer" class="hidden">
         <h2>Exam Result</h2>
-        <p><strong>Name:</strong> <span id="studentName"></span></p>
-        <p><strong>Admission No:</strong> <span id="admissionNoDisplay"></span></p>
-        <p><strong>Standard:</strong> <span id="studentStd"></span></p>
-        <table>
+        <div id="studentDetails">
+            <p><strong>Name:</strong> <span id="studentName"></span></p>
+            <p><strong>Admission No:</strong> <span id="admissionNoDisplay"></span></p>
+            <p><strong>Standard:</strong> <span id="studentStd"></span></p>
+        </div>
+        <table id="resultTable">
             <tr><th>Subject</th><th>Marks</th></tr>
             <tr><td>Lisan</td><td id="lisan"></td></tr>
             <tr><td>Fiqh</td><td id="fiqh"></td></tr>
