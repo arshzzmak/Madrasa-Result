@@ -1,60 +1,69 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f4f4f4;
+    margin: 20px;
 }
 
-h1 {
+.header h1 {
     font-size: 28px;
-    color: #0056b3;
-    text-transform: uppercase;
     font-weight: bold;
-    margin-bottom: 5px;
 }
 
-h2 {
-    font-size: 22px;
-    color: #333;
+.header h2 {
+    font-size: 20px;
     font-weight: normal;
-    margin-bottom: 15px;
+    margin-top: -10px;
+    color: gray;
 }
 
-input {
-    padding: 10px;
-    font-size: 16px;
-    margin: 10px;
-}
-
-button {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #28a745;
+.name-box {
+    background-color: #4a6cf7;
     color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-#result {
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
     font-size: 18px;
+}
+
+table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #000;
+    color: white;
+}
+
+.marks-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.marks-box {
+    background-color: #d0d8ff;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.status-box {
+    border: 2px solid black;
+    padding: 10px;
+    display: inline-block;
     margin-top: 15px;
-    color: #d9534f;
-}
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-
-    input, button {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    #result {
-        font-size: 16px;
-    }
+    font-size: 18px;
 }
 
+.hidden {
+    display: none;
+}
