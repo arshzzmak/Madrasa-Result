@@ -10,7 +10,7 @@ async function searchResult() {
 
         let data = await response.json();
 
-        // Find student data
+        // Find student data (ensure correct key names in JSON)
         let student = data.find(student => student.admission_no === admissionNo);
 
         if (student) {
@@ -37,14 +37,20 @@ async function searchResult() {
             statusElement.textContent = statusText;
             statusElement.style.color = statusColor;
 
-            // Show result section
+            // Show result section and hide the input form
+            document.getElementById("searchContainer").classList.add("hidden");
             document.getElementById("resultContainer").classList.remove("hidden");
         } else {
-            document.getElementById("resultContainer").classList.add("hidden");
-            alert("No result found!");
+            alert("No result found! Please check the admission number.");
         }
     } catch (error) {
-        document.getElementById("resultContainer").classList.add("hidden");
-        alert("Error loading results.");
+        alert("Error loading results. Please try again.");
     }
+}
+
+// Function to reset and go back to the search form
+function goBack() {
+    document.getElementById("searchContainer").classList.remove("hidden");
+    document.getElementById("resultContainer").classList.add("hidden");
+    document.getElementById("admissionNo").value = "";
 }
