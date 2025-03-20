@@ -14,25 +14,25 @@ async function searchResult() {
         console.log("Fetched Data:", data);
         console.log("Entered Admission No:", admissionNo);
 
-        // Fix: Use correct key name (admissionNo instead of admission_no)
-        let student = data.find(student => student.admissionNo.trim() === admissionNo);
+        // Find student data
+        let student = data.find(student => student.admission_no.trim() === admissionNo);
 
         if (student) {
             console.log("Student Found:", student);
 
             // Update HTML elements
             document.getElementById("studentName").textContent = student.name;
-            document.getElementById("admissionNoDisplay").textContent = student.admissionNo;
+            document.getElementById("admissionNoDisplay").textContent = student.admission_no;
             document.getElementById("studentStd").textContent = student.std || "N/A";
             document.getElementById("lisan").textContent = student.lisan;
             document.getElementById("fiqh").textContent = student.fiqh;
             document.getElementById("aqeeda").textContent = student.aqeeda;
             document.getElementById("akhlaq").textContent = student.akhlaq;
             document.getElementById("quran").textContent = student.quran;
-            document.getElementById("total").textContent = student.total;
+            document.getElementById("total").textContent = student.total_marks;
             document.getElementById("percentage").textContent = student.percentage;
 
-            // Fix: Ensure pass/fail logic works correctly
+            // Pass/Fail logic
             let isPassed = student.fiqh >= 40 && student.aqeeda >= 40 && student.lisan >= 40 &&
                            student.akhlaq >= 40 && student.quran >= 40;
             let statusText = isPassed ? "✅ Pass" : "❌ Fail";
@@ -43,7 +43,7 @@ async function searchResult() {
             statusElement.textContent = statusText;
             statusElement.style.color = statusColor;
 
-            // Fix: Prevent "Cannot read properties of null" error
+            // Fix: Ensure searchContainer and resultContainer exist before modifying classList
             let searchContainer = document.getElementById("searchContainer");
             let resultContainer = document.getElementById("resultContainer");
 
@@ -61,4 +61,11 @@ async function searchResult() {
         alert("Error loading results. Please try again.");
         console.error("Fetch error:", error);
     }
+}
+
+// Reset function to go back to search input
+function resetSearch() {
+    document.getElementById("searchContainer").classList.remove("hidden");
+    document.getElementById("resultContainer").classList.add("hidden");
+    document.getElementById("admissionNo").value = ""; // Clear input field
 }
