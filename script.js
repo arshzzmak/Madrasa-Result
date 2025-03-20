@@ -8,14 +8,9 @@ async function searchResult() {
         }
 
         let data = await response.json();
-        console.log("Fetched Data:", data);
-        console.log("Entered Admission No:", admissionNo);
-
         let student = data.find(student => student.admissionNo.trim() === admissionNo);
 
         if (student) {
-            console.log("Student Found:", student);
-
             document.getElementById("studentName").textContent = student.name;
             document.getElementById("admissionNoDisplay").textContent = student.admissionNo;
             document.getElementById("studentStd").textContent = student.std || "N/A";
@@ -38,18 +33,18 @@ async function searchResult() {
 
             document.getElementById("searchContainer").classList.add("hidden");
             document.getElementById("resultContainer").classList.remove("hidden");
+            document.getElementById("resultTable").style.display = "table"; // Show table only after result is fetched
         } else {
             alert("No result found! Please check the admission number.");
-            console.log("No matching student found.");
         }
     } catch (error) {
         alert("Error loading results. Please try again.");
-        console.error("Fetch error:", error);
     }
 }
 
 function resetSearch() {
     document.getElementById("searchContainer").classList.remove("hidden");
     document.getElementById("resultContainer").classList.add("hidden");
+    document.getElementById("resultTable").style.display = "none"; // Hide table when resetting
     document.getElementById("admissionNo").value = "";
 }
