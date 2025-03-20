@@ -14,25 +14,25 @@ async function searchResult() {
         console.log("Fetched Data:", data);
         console.log("Entered Admission No:", admissionNo);
 
-        // Find student data
-        let student = data.find(student => student.admission_no.trim() === admissionNo);
+        // Fix: Use correct key name (admissionNo instead of admission_no)
+        let student = data.find(student => student.admissionNo.trim() === admissionNo);
 
         if (student) {
             console.log("Student Found:", student);
 
             // Update HTML elements
             document.getElementById("studentName").textContent = student.name;
-            document.getElementById("admissionNoDisplay").textContent = student.admission_no;
-            document.getElementById("studentStd").textContent = student.std;
+            document.getElementById("admissionNoDisplay").textContent = student.admissionNo;
+            document.getElementById("studentStd").textContent = student.std || "N/A"; // If std is missing, show "N/A"
             document.getElementById("lisan").textContent = student.lisan;
             document.getElementById("fiqh").textContent = student.fiqh;
             document.getElementById("aqeeda").textContent = student.aqeeda;
             document.getElementById("akhlaq").textContent = student.akhlaq;
             document.getElementById("quran").textContent = student.quran;
-            document.getElementById("total").textContent = student.total_marks;
+            document.getElementById("total").textContent = student.total;
             document.getElementById("percentage").textContent = student.percentage;
 
-            // Pass/Fail logic
+            // Fix: Ensure pass/fail logic works correctly
             let isPassed = student.fiqh >= 40 && student.aqeeda >= 40 && student.lisan >= 40 &&
                            student.akhlaq >= 40 && student.quran >= 40;
             let statusText = isPassed ? "✅ Pass" : "❌ Fail";
