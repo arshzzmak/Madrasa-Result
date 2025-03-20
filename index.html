@@ -3,30 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madrasa Exam Results</title>
+    <title>Madrasa Annual Exam Results</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="searchContainer">
-        <h2>Search Student Result</h2>
+        <h1>Madrasa Name</h1>
+        <h2>Annual Exam Result</h2>
         <input type="text" id="admissionNo" placeholder="Enter Admission Number">
         <button onclick="searchResult()">Search</button>
     </div>
 
     <div id="resultContainer" class="hidden">
-        <h2>Student Result</h2>
+        <h2>Exam Result</h2>
         <p><strong>Name:</strong> <span id="studentName"></span></p>
         <p><strong>Admission No:</strong> <span id="admissionNoDisplay"></span></p>
         <p><strong>Standard:</strong> <span id="studentStd"></span></p>
-        <p><strong>Lisan:</strong> <span id="lisan"></span></p>
-        <p><strong>Fiqh:</strong> <span id="fiqh"></span></p>
-        <p><strong>Aqeeda:</strong> <span id="aqeeda"></span></p>
-        <p><strong>Akhlaq:</strong> <span id="akhlaq"></span></p>
-        <p><strong>Quran:</strong> <span id="quran"></span></p>
-        <p><strong>Total:</strong> <span id="total"></span></p>
-        <p><strong>Percentage:</strong> <span id="percentage"></span>%</p>
+        <table>
+            <tr><th>Subject</th><th>Marks</th></tr>
+            <tr><td>Lisan</td><td id="lisan"></td></tr>
+            <tr><td>Fiqh</td><td id="fiqh"></td></tr>
+            <tr><td>Aqeeda</td><td id="aqeeda"></td></tr>
+            <tr><td>Akhlaq</td><td id="akhlaq"></td></tr>
+            <tr><td>Quran</td><td id="quran"></td></tr>
+            <tr><td><strong>Total</strong></td><td id="total"></td></tr>
+            <tr><td><strong>Percentage</strong></td><td id="percentage"></td></tr>
+        </table>
         <p><strong>Status:</strong> <span id="status"></span></p>
-
         <button onclick="resetSearch()">Search Again</button>
     </div>
 
