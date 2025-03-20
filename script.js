@@ -23,7 +23,7 @@ async function searchResult() {
             // Update HTML elements
             document.getElementById("studentName").textContent = student.name;
             document.getElementById("admissionNoDisplay").textContent = student.admissionNo;
-            document.getElementById("studentStd").textContent = student.std || "N/A"; // If std is missing, show "N/A"
+            document.getElementById("studentStd").textContent = student.std || "N/A";
             document.getElementById("lisan").textContent = student.lisan;
             document.getElementById("fiqh").textContent = student.fiqh;
             document.getElementById("aqeeda").textContent = student.aqeeda;
@@ -43,9 +43,16 @@ async function searchResult() {
             statusElement.textContent = statusText;
             statusElement.style.color = statusColor;
 
-            // Show result section
-            document.getElementById("searchContainer").classList.add("hidden");
-            document.getElementById("resultContainer").classList.remove("hidden");
+            // Fix: Prevent "Cannot read properties of null" error
+            let searchContainer = document.getElementById("searchContainer");
+            let resultContainer = document.getElementById("resultContainer");
+
+            if (searchContainer) {
+                searchContainer.classList.add("hidden");
+            }
+            if (resultContainer) {
+                resultContainer.classList.remove("hidden");
+            }
         } else {
             alert("No result found! Please check the admission number.");
             console.log("No matching student found.");
