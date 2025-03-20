@@ -2,10 +2,27 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+h2 {
+    color: #555;
 }
 
 .hidden {
     display: none;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    margin-top: 10px;
 }
 
 button {
@@ -26,4 +43,26 @@ button:hover {
 p {
     font-size: 18px;
     margin: 5px 0;
+}
+
+table {
+    margin: 10px auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #28a745;
+    color: white;
+}
+
+#status {
+    font-size: 20px;
+    font-weight: bold;
 }
