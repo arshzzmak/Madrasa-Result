@@ -17,11 +17,23 @@
     <script>
     async function searchResult() {
         let admissionNo = document.getElementById("admissionNo").value;
+
+        // Fetch JSON data
+        let response = await fetch("https://raw.githubusercontent.com/arshzzmak/Madrasa-Result/main/results.json");
         let data = await response.json();
 
+        // Search for student
         let student = data.find(student => student.admissionNo === admissionNo);
         if (student) {
-            document.getElementById("result").innerText = student.name + " - Result: " + student.result;
+            document.getElementById("result").innerText = 
+                `Name: ${student.name}
+                 Fiqh: ${student.fiqh}
+                 Aqeedah: ${student.aqeeda}
+                 Lisan: ${student.lisan}
+                 Akhlaq: ${student.akhlaq}
+                 Quran: ${student.quran}
+                 Total: ${student.total}
+                 Percentage: ${student.percentage}%`;
         } else {
             document.getElementById("result").innerText = "No result found!";
         }
