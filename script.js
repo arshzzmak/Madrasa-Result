@@ -2,7 +2,7 @@ async function searchResult() {
     let admissionNo = document.getElementById("admissionNo").value.trim();
 
     try {
-        // Fetch the correct JSON file
+        // Fetch the results.json file from GitHub
         let response = await fetch("https://raw.githubusercontent.com/arshzzmak/Madrasa-Result-/main/results.json");
         if (!response.ok) {
             throw new Error("Failed to load results.");
@@ -11,31 +11,40 @@ async function searchResult() {
         let data = await response.json();
 
         // Find student data
-        let student = data.find(student => student.admissionNo === admissionNo);
+        let student = data.find(student => student.admission_no === admissionNo);
 
         if (student) {
+            // Display student details
+            document.getElementById("studentName").textContent = student.name;
+            document.getElementById("admissionNoDisplay").textContent = student.admission_no;
+            document.getElementById("studentStd").textContent = student.std;
+            document.getElementById("lisan").textContent = student.lisan;
+            document.getElementById("fiqh").textContent = student.fiqh;
+            document.getElementById("aqeeda").textContent = student.aqeeda;
+            document.getElementById("akhlaq").textContent = student.akhlaq;
+            document.getElementById("quran").textContent = student.quran;
+            document.getElementById("total").textContent = student.total_marks;
+            document.getElementById("percentage").textContent = student.percentage;
+
             // Check pass/fail condition
             let isPassed = student.fiqh >= 40 && student.aqeeda >= 40 && student.lisan >= 40 &&
                            student.akhlaq >= 40 && student.quran >= 40;
-            let status = isPassed ? "✅ Pass" : "❌ Fail";
-            let color = isPassed ? "green" : "red";
+            let statusText = isPassed ? "✅ Pass" : "❌ Fail";
+            let statusColor = isPassed ? "green" : "red";
 
-            // Display result
-            document.getElementById("result").innerHTML = `
-                <strong>Name:</strong> ${student.name} <br>
-                <strong>Fiqh:</strong> ${student.fiqh} <br>
-                <strong>Aqeedah:</strong> ${student.aqeeda} <br>
-                <strong>Lisan:</strong> ${student.lisan} <br>
-                <strong>Akhlaq:</strong> ${student.akhlaq} <br>
-                <strong>Quran:</strong> ${student.quran} <br>
-                <strong>Total:</strong> ${student.total} <br>
-                <strong>Percentage:</strong> ${student.percentage}% <br>
-                <strong>Status:</strong> <span style="color:${color}; font-weight: bold;">${status}</span>
-            `;
+            // Update status
+            let statusElement = document.getElementById("status");
+            statusElement.textContent = statusText;
+            statusElement.style.color = statusColor;
+
+            // Show result section
+            document.getElementById("resultContainer").classList.remove("hidden");
         } else {
-            document.getElementById("result").innerHTML = "<span style='color:red;'>No result found!</span>";
+            document.getElementById("resultContainer").classList.add("hidden");
+            alert("No result found!");
         }
     } catch (error) {
-        document.getElementById("result").innerHTML = "<span style='color:red;'>Error loading results.</span>";
+        document.getElementById("resultContainer").classList.add("hidden");
+        alert("Error loading results.");
     }
 }
