@@ -1,43 +1,20 @@
-<script>
-    async function searchResult() {
-        let admissionNo = document.getElementById("admissionNo").value.trim();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madrasa Exam Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>IZZATHUL ISLAM MADRASA</h1>
+    <h2>Annual Exam Result 2025</h2>
+    <p>Enter your admission number to check results:</p>
+    <input type="text" id="admissionNo" placeholder="Enter Admission No">
+    <button onclick="searchResult()">Check Result</button>
+    <p id="result"></p>
 
-        try {
-            // Fetch the results.json file from GitHub Pages
-            let response = await fetch("https://arshzzmak.github.io/Madrasa-Result-/results.json");
-            if (!response.ok) {
-                throw new Error("Failed to load results.");
-            }
-
-            let data = await response.json();
-
-            // Find student data
-            let student = data.find(student => student.admissionNo === admissionNo);
-
-            if (student) {
-                // Check pass/fail condition
-                let isPassed = student.fiqh >= 40 && student.aqeeda >= 40 && student.lisan >= 40 &&
-                               student.akhlaq >= 40 && student.quran >= 40;
-                let status = isPassed ? "✅ Pass" : "❌ Fail";
-                let color = isPassed ? "green" : "red";
-
-                // Display result
-                document.getElementById("result").innerHTML = `
-                    <strong>Name:</strong> ${student.name} <br>
-                    <strong>Fiqh:</strong> ${student.fiqh} <br>
-                    <strong>Aqeedah:</strong> ${student.aqeeda} <br>
-                    <strong>Lisan:</strong> ${student.lisan} <br>
-                    <strong>Akhlaq:</strong> ${student.akhlaq} <br>
-                    <strong>Quran:</strong> ${student.quran} <br>
-                    <strong>Total:</strong> ${student.total} <br>
-                    <strong>Percentage:</strong> ${student.percentage}% <br>
-                    <strong>Status:</strong> <span style="color:${color}; font-weight: bold;">${status}</span>
-                `;
-            } else {
-                document.getElementById("result").innerHTML = "<span style='color:red;'>No result found!</span>";
-            }
-        } catch (error) {
-            document.getElementById("result").innerHTML = "<span style='color:red;'>Error loading results.</span>";
-        }
-    }
-</script>
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
