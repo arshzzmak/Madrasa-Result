@@ -10,26 +10,20 @@ async function searchResult() {
 
         let data = await response.json();
 
-        // Debugging: Log fetched data and admission number
-        console.log("Fetched Data:", data);
-        console.log("Entered Admission No:", admissionNo);
-
         // Find student data
-        let student = data.find(student => student.admission_no.trim() === admissionNo);
+        let student = data.find(student => student.admissionNo.trim() === admissionNo);
 
         if (student) {
-            console.log("Student Found:", student);
-
             // Update HTML elements
             document.getElementById("studentName").textContent = student.name;
-            document.getElementById("admissionNoDisplay").textContent = student.admission_no;
+            document.getElementById("admissionNoDisplay").textContent = student.admissionNo;
             document.getElementById("studentStd").textContent = student.std || "N/A";
             document.getElementById("lisan").textContent = student.lisan;
             document.getElementById("fiqh").textContent = student.fiqh;
             document.getElementById("aqeeda").textContent = student.aqeeda;
             document.getElementById("akhlaq").textContent = student.akhlaq;
             document.getElementById("quran").textContent = student.quran;
-            document.getElementById("total").textContent = student.total_marks;
+            document.getElementById("total").textContent = student.total;
             document.getElementById("percentage").textContent = student.percentage;
 
             // Pass/Fail logic
@@ -43,19 +37,11 @@ async function searchResult() {
             statusElement.textContent = statusText;
             statusElement.style.color = statusColor;
 
-            // Fix: Ensure searchContainer and resultContainer exist before modifying classList
-            let searchContainer = document.getElementById("searchContainer");
-            let resultContainer = document.getElementById("resultContainer");
-
-            if (searchContainer) {
-                searchContainer.classList.add("hidden");
-            }
-            if (resultContainer) {
-                resultContainer.classList.remove("hidden");
-            }
+            // Hide search input, show result
+            document.getElementById("searchContainer").classList.add("hidden");
+            document.getElementById("resultContainer").classList.remove("hidden");
         } else {
             alert("No result found! Please check the admission number.");
-            console.log("No matching student found.");
         }
     } catch (error) {
         alert("Error loading results. Please try again.");
