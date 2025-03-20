@@ -17,7 +17,6 @@
     <script>
     async function searchResult() {
         let admissionNo = document.getElementById("admissionNo").value;
-        let response = await fetch("results.json");
         let data = await response.json();
 
         let student = data.find(student => student.admissionNo === admissionNo);
