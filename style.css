@@ -49,6 +49,7 @@ table {
     margin: 10px auto;
     border-collapse: collapse;
     width: 80%;
+    display: none; /* Hide table initially */
 }
 
 th, td {
