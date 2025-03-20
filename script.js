@@ -8,7 +8,6 @@ async function searchResult() {
         }
 
         let data = await response.json();
-
         let student = data.find(student => student.admissionNo.trim() === admissionNo);
 
         if (student) {
@@ -32,8 +31,8 @@ async function searchResult() {
             statusElement.textContent = statusText;
             statusElement.style.color = statusColor;
 
-            document.getElementById("searchContainer").classList.add("hidden");
-            document.getElementById("resultContainer").classList.remove("hidden");
+            document.getElementById("searchContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
         } else {
             alert("No result found! Please check the admission number.");
         }
@@ -44,7 +43,7 @@ async function searchResult() {
 }
 
 function resetSearch() {
-    document.getElementById("searchContainer").classList.remove("hidden");
-    document.getElementById("resultContainer").classList.add("hidden");
+    document.getElementById("searchContainer").style.display = "block";
+    document.getElementById("resultContainer").style.display = "none";
     document.getElementById("admissionNo").value = "";
 }
