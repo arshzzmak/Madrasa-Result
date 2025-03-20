@@ -1,25 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madrasa Exam Results</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>IZZATHUL ISLAM MADRASA</h1>
-    <h2>Annual Exam Result 2025</h2>
-    <p>Enter your admission number to check results:</p>
-    <input type="text" id="admissionNo" placeholder="Enter Admission No">
-    <button onclick="searchResult()">Check Result</button>
-    <p id="result"></p>
-
-    <script>
+<script>
     async function searchResult() {
         let admissionNo = document.getElementById("admissionNo").value;
 
         try {
-            // Fetch JSON data (Updated repository link)
+            // Fetch JSON data
             let response = await fetch("https://raw.githubusercontent.com/arshzzmak/Madrasa-Result-/main/results.json");
             if (!response.ok) {
                 throw new Error("Failed to load results.");
@@ -30,6 +14,11 @@
             // Search for student
             let student = data.find(student => student.admissionNo === admissionNo);
             if (student) {
+                // Determine Pass/Fail
+                let isPassed = (student.fiqh >= 40 && student.aqeeda >= 40 && student.lisan >= 40 &&
+                                student.akhlaq >= 40 && student.quran >= 40);
+                let status = isPassed ? "✅ Pass" : "❌ Fail";
+
                 document.getElementById("result").innerHTML = `
                     <strong>Name:</strong> ${student.name} <br>
                     <strong>Fiqh:</strong> ${student.fiqh} <br>
@@ -39,6 +28,7 @@
                     <strong>Quran:</strong> ${student.quran} <br>
                     <strong>Total:</strong> ${student.total} <br>
                     <strong>Percentage:</strong> ${student.percentage}% <br>
+                    <strong>Status:</strong> <span style="color:${isPassed ? 'green' : 'red'}; font-weight: bold;">${status}</span>
                 `;
             } else {
                 document.getElementById("result").innerText = "No result found!";
@@ -47,7 +37,4 @@
             document.getElementById("result").innerText = "Error loading results.";
         }
     }
-    </script>
-
-</body>
-</html>
+</script>
