@@ -2,7 +2,7 @@ async function searchResult() {
     let admissionNo = document.getElementById("admissionNo").value.trim();
 
     try {
-        let response = await fetch("https://raw.githubusercontent.com/arshzzmak/Madrasa-Result-/main/results.json")
+        let response = await fetch("https://raw.githubusercontent.com/arshzzmak/Madrasa-Result/main/results.json");
         if (!response.ok) {
             throw new Error("Failed to load results.");
         }
@@ -46,4 +46,4 @@ function resetSearch() {
     document.getElementById("searchContainer").style.display = "block";
     document.getElementById("resultContainer").style.display = "none";
     document.getElementById("admissionNo").value = "";
-}
+                }
