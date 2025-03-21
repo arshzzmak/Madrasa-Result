@@ -1,43 +1,24 @@
-function fetchResult() {
-    let admissionNumber = document.getElementById("admissionNumber").value.trim();
-    
-    if (admissionNumber === "") {
-        alert("Please enter a valid Admission Number.");
-        return;
+[
+    {
+        "name": "Ahmed Yusuf",
+        "admission_number": "12345",
+        "class": "2nd Grade",
+        "marks": [
+            {"subject": "Quran", "marks": 95},
+            {"subject": "Arabic", "marks": 90},
+            {"subject": "Islamic Studies", "marks": 85}
+        ],
+        "status": "Pass"
+    },
+    {
+        "name": "Fatima Noor",
+        "admission_number": "67890",
+        "class": "2nd Grade",
+        "marks": [
+            {"subject": "Quran", "marks": 88},
+            {"subject": "Arabic", "marks": 92},
+            {"subject": "Islamic Studies", "marks": 80}
+        ],
+        "status": "Pass"
     }
-
-    fetch("data.json")
-        .then(response => response.json())
-        .then(data => {
-            let student = data.find(student => student.admission_number === admissionNumber);
-
-            if (student) {
-                document.getElementById("studentName").innerText = student.name;
-                document.getElementById("studentId").innerText = student.admission_number;
-                document.getElementById("studentClass").innerText = student.class;
-
-                let marksTable = document.getElementById("marksTable");
-                marksTable.innerHTML = ""; // Clear previous data
-
-                student.marks.forEach(subject => {
-                    let row = `<tr>
-                        <td>${subject.subject}</td>
-                        <td>${subject.marks}</td>
-                    </tr>`;
-                    marksTable.innerHTML += row;
-                });
-
-                document.getElementById("status").innerText = `Status: ${student.status}`;
-                document.getElementById("searchContainer").classList.add("hidden");
-                document.getElementById("resultContainer").classList.remove("hidden");
-            } else {
-                alert("No results found for this Admission Number.");
-            }
-        })
-        .catch(error => console.error("Error fetching data:", error));
-}
-
-function goBack() {
-    document.getElementById("resultContainer").classList.add("hidden");
-    document.getElementById("searchContainer").classList.remove("hidden");
-}
+]
