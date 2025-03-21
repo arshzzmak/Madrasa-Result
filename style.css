@@ -1,25 +1,55 @@
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
     background-color: #f9f9f9; /* Light background for better contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* First Interface */
+#searchContainer {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: bold;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 h2 {
-    font-size: 20px;
-    color: #555;
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 20px;
 }
 
-button {
-    padding: 10px 20px;
-    margin-top: 10px;
+/* Input Field */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
     cursor: pointer;
     background-color: #28a745;
     color: white;
@@ -32,25 +62,33 @@ button:hover {
     background-color: #218838;
 }
 
+/* Second Interface */
+#resultContainer {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin-top: 20px;
+}
+
 table {
-    width: 80%; /* Increased for better visibility */
-    max-width: 600px; /* Prevents it from getting too wide */
-    margin: 10px auto;
+    width: 100%;
     border-collapse: collapse;
-    background-color: white;
+    margin-top: 10px;
+    background: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-table, th, td {
-    border: 1px solid black;
-}
-
 th, td {
+    border: 1px solid black;
     padding: 8px;
     text-align: center;
-    font-size: 16px; /* Improved readability */
+    font-size: 16px;
 }
 
-.hidden {
-    display: none; /* Or use visibility: hidden if you plan to animate */
+/* Status Text */
+#status {
+    font-weight: bold;
+    font-size: 18px;
 }
