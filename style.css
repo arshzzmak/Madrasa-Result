@@ -1,32 +1,32 @@
-/* General Styling */
+/* General Page Styling */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9; /* Light background for better contrast */
+    background-color: #f8f9fa; /* Light gray background */
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 
-/* First Interface */
+/* First Interface: Search Container */
 #searchContainer {
     background: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
     text-align: center;
-    width: 350px;
 }
 
 h1 {
     font-size: 26px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 h2 {
@@ -35,8 +35,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Input Field */
-input[type="text"] {
+input {
     width: 100%;
     padding: 12px;
     font-size: 16px;
@@ -45,11 +44,10 @@ input[type="text"] {
     margin-bottom: 15px;
 }
 
-/* Button Styling */
 button {
     width: 100%;
     padding: 12px;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     background-color: #28a745;
     color: white;
@@ -62,33 +60,54 @@ button:hover {
     background-color: #218838;
 }
 
-/* Second Interface */
+/* Second Interface: Result Display */
 #resultContainer {
     background: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    margin-top: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
 }
 
+#resultContainer h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#resultContainer p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Table Styling */
 table {
     width: 100%;
+    margin-top: 15px;
     border-collapse: collapse;
-    margin-top: 10px;
     background: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
-    border: 1px solid black;
-    padding: 8px;
+    padding: 10px;
     text-align: center;
-    font-size: 16px;
+    border: 1px solid #ddd;
 }
 
-/* Status Text */
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Status Styling */
 #status {
     font-weight: bold;
     font-size: 18px;
 }
+
+/* Hide Initially */
+.hidden {
+    display: none;
+    }
