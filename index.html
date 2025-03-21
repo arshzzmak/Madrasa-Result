@@ -3,42 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IZZATHUL ISLAM MADRASA - Exam Results</title>
-    <link rel="stylesheet" href="https://arshzzmak.github.io/Madrasa-Result/styles.css">
+    <title>Madrasa Exam Results</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- First Interface: Only Search Bar -->
+    <!-- First Interface: Search Box -->
     <div id="searchContainer">
-        <h1>IZZATHUL ISLAM MADRASA</h1>
-        <h2>Annual Exam Result</h2>
-        <input type="text" id="admissionNo" placeholder="Enter Admission Number">
-        <button onclick="searchResult()">Search</button>
+        <h1>Madrasa Exam Results</h1>
+        <h2>Enter your Admission Number to check results</h2>
+        <input type="text" id="admissionNumber" placeholder="Enter Admission Number">
+        <button onclick="fetchResult()">Submit</button>
     </div>
 
-    <!-- Second Interface: Hidden Initially -->
-    <div id="resultContainer" style="display: none;">
-        <h2>Exam Result</h2>
+    <!-- Second Interface: Result Display (Hidden Initially) -->
+    <div id="resultContainer" class="hidden">
+        <h2>Exam Results</h2>
         <p><strong>Name:</strong> <span id="studentName"></span></p>
-        <p><strong>Admission No:</strong> <span id="admissionNoDisplay"></span></p>
-        <p><strong>Standard:</strong> <span id="studentStd"></span></p>
-
+        <p><strong>Admission Number:</strong> <span id="studentId"></span></p>
+        <p><strong>Class:</strong> <span id="studentClass"></span></p>
+        
         <table>
-            <tr><th>Subject</th><th>Marks</th></tr>
-            <tr><td>Lisan</td><td id="lisan"></td></tr>
-            <tr><td>Fiqh</td><td id="fiqh"></td></tr>
-            <tr><td>Aqeeda</td><td id="aqeeda"></td></tr>
-            <tr><td>Akhlaq</td><td id="akhlaq"></td></tr>
-            <tr><td>Quran</td><td id="quran"></td></tr>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody id="marksTable"></tbody>
         </table>
 
-        <p><strong>Total:</strong> <span id="total"></span></p>
-        <p><strong>Percentage:</strong> <span id="percentage"></span>%</p>
-        <p><strong>Status:</strong> <span id="status"></span></p>
-
-        <button onclick="resetSearch()">Search Again</button>
+        <p id="status"></p>
+        <button onclick="goBack()">Back</button>
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
