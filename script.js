@@ -1,49 +1,50 @@
 async function searchResult() {
-    let admissionNo = document.getElementById("admissionNo").value.trim();
+    const admissionNumber = document.getElementById('admissionNumber').value;
+    const resultDiv = document.getElementById('result');
+    
+    if (!admissionNumber) {
+        alert("Please enter an admission number");
+        return;
+    }
 
     try {
-        let response = await fetch("https://raw.githubusercontent.com/arshzzmak/Madrasa-Result/main/results.json");
-        if (!response.ok) {
-            throw new Error("Failed to load results.");
-        }
-
-        let data = await response.json();
-        let student = data.find(student => student.admissionNo.trim() === admissionNo);
+        const response = await fetch('results.json');
+        const data = await response.json();
+        const student = data.students.find(s => s.admissionNumber === admissionNumber);
 
         if (student) {
-            document.getElementById("studentName").textContent = student.name;
-            document.getElementById("admissionNoDisplay").textContent = student.admissionNo;
-            document.getElementById("studentStd").textContent = student.std || "N/A";
-            document.getElementById("lisan").textContent = student.lisan;
-            document.getElementById("fiqh").textContent = student.fiqh;
-            document.getElementById("aqeeda").textContent = student.aqeeda;
-            document.getElementById("akhlaq").textContent = student.akhlaq;
-            document.getElementById("quran").textContent = student.quran;
-            document.getElementById("total").textContent = student.total;
-            document.getElementById("percentage").textContent = student.percentage;
+            resultDiv.innerHTML = `
+                <div class="student-info">
+                    <h3>Student Details</h3>
+                    <p>Name: ${student.name}</p>
+                    <p>Admission Number: ${student.admissionNumber}</p>
+                    <p>Class: ${student.class}</p>
+                </div>
 
-            let isPassed = student.fiqh >= 40 && student.aqeeda >= 40 && student.lisan >= 40 &&
-                           student.akhlaq >= 40 && student.quran >= 40;
-            let statusText = isPassed ? "✅ Pass" : "❌ Fail";
-            let statusColor = isPassed ? "green" : "red";
-
-            let statusElement = document.getElementById("status");
-            statusElement.textContent = statusText;
-            statusElement.style.color = statusColor;
-
-            document.getElementById("searchContainer").style.display = "none";
-            document.getElementById("resultContainer").style.display = "block";
+                <h3>Marklist</h3>
+                <table class="subject-table">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                    </tr>
+                    ${student.subjects.map(subject => `
+                        <tr>
+                            <td>${subject.name}</td>
+                            <td>${subject.marks}</td>
+                            <td>${subject.grade}</td>
+                        </tr>
+                    `).join('')}
+                </table>
+            `;
+            resultDiv.style.display = 'block';
         } else {
-            alert("No result found! Please check the admission number.");
+            resultDiv.innerHTML = "No results found for this admission number";
+            resultDiv.style.display = 'block';
         }
     } catch (error) {
-        alert("Error loading results. Please try again.");
-        console.error("Fetch error:", error);
+        console.error('Error:', error);
+        resultDiv.innerHTML = "Error loading results";
+        resultDiv.style.display = 'block';
     }
 }
-
-function resetSearch() {
-    document.getElementById("searchContainer").style.display = "block";
-    document.getElementById("resultContainer").style.display = "none";
-    document.getElementById("admissionNo").value = "";
-                }
