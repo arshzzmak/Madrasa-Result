@@ -1,5 +1,5 @@
 async function searchResult() {
-    const admissionNumber = document.getElementById('admissionNumber').value.toUpperCase();
+    const admissionNumber = document.getElementById('admissionNumber').value.trim().toUpperCase();
     const resultDiv = document.getElementById('result');
     
     if (!admissionNumber) {
@@ -10,14 +10,21 @@ async function searchResult() {
     try {
         const response = await fetch('results.json');
         const data = await response.json();
+        
+        // Debugging: Log the received data
+        console.log('Loaded data:', data);
+        
         const student = data.students.find(s => s.admission_number === admissionNumber);
+
+        // Debugging: Log the search result
+        console.log('Found student:', student);
 
         if (student) {
             let totalMarks = 0;
-            let subjectRows = student.subjects.map(subject => {
+            const subjectRows = student.subjects.map(subject => {
                 const mcq = subject.Mcq || '-';
                 const written = subject.Written || '-';
-                const subTotal = (parseInt(subject.Mcq) || 0) + (parseInt(subject.Written) || 0);
+                const subTotal = (parseInt(mcq) || 0) + (parseInt(written) || 0);
                 totalMarks += subTotal;
                 
                 return `
@@ -72,7 +79,7 @@ async function searchResult() {
         }
     } catch (error) {
         console.error('Error:', error);
-        resultDiv.innerHTML = "Error loading results";
+        resultDiv.innerHTML = "Error loading results. Check console for details.";
         resultDiv.style.display = 'block';
     }
 }
