@@ -1,113 +1,78 @@
-/* General Page Styling */
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Light gray background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* First Interface: Search Container */
-#searchContainer {
-    background: white;
-    padding: 30px;
+body {
+    background-color: #f0f8ff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+header {
     text-align: center;
+    margin-bottom: 30px;
+    color: #2c5f2d;
 }
 
-h1 {
-    font-size: 26px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+.search-box {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-h2 {
-    font-size: 18px;
-    color: gray;
-    margin-bottom: 20px;
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
+input[type="text"] {
+    padding: 10px;
+    width: 250px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    margin-bottom: 15px;
 }
 
 button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #28a745;
+    padding: 10px 20px;
+    background-color: #2c5f2d;
     color: white;
     border: none;
     border-radius: 5px;
-    transition: background 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #1e401f;
 }
 
-/* Second Interface: Result Display */
-#resultContainer {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-}
-
-#resultContainer h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-#resultContainer p {
-    font-size: 16px;
-    margin: 5px 0;
-}
-
-/* Table Styling */
-table {
-    width: 100%;
-    margin-top: 15px;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
+.result-container {
+    padding: 20px;
     border: 1px solid #ddd;
-}
-
-th {
-    background-color: #007bff;
-    color: white;
-}
-
-/* Status Styling */
-#status {
-    font-weight: bold;
-    font-size: 18px;
-}
-
-/* Hide Initially */
-.hidden {
+    border-radius: 5px;
     display: none;
-    }
+}
+
+.student-info {
+    margin-bottom: 20px;
+}
+
+.subject-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.subject-table th, .subject-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.subject-table th {
+    background-color: #f8f9fa;
+}
