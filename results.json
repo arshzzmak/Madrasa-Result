@@ -1,57 +1,28 @@
-[
-    {
-        "admissionNo": "1101",
-        "name": "Zayan",
-        "fiqh": 45,
-        "aqeeda": 42,
-        "lisan": 43,
-        "akhlaq": 41,
-        "quran": 40,
-        "total": 211,
-        "percentage": 42.2
-    },
-    {
-        "admissionNo": "1102",
-        "name": "Izyan",
-        "fiqh": 40,
-        "aqeeda": 40,
-        "lisan": 40,
-        "akhlaq": 38,
-        "quran": 31,
-        "total": 189,
-        "percentage": 37.8
-    },
-    {
-        "admissionNo": "1103",
-        "name": "Abiyahajara",
-        "fiqh": 46,
-        "aqeeda": 40,
-        "lisan": 38,
-        "akhlaq": 35,
-        "quran": 30,
-        "total": 189,
-        "percentage": 37.8
-    },
-    {
-        "admissionNo": "1104",
-        "name": "Anam Ali",
-        "fiqh": 48,
-        "aqeeda": 49,
-        "lisan": 49,
-        "akhlaq": 50,
-        "quran": 50,
-        "total": 246,
-        "percentage": 49.2
-    },
-    {
-        "admissionNo": "1105",
-        "name": "Fatima Zahra",
-        "fiqh": 38,
-        "aqeeda": 39,
-        "lisan": 41,
-        "akhlaq": 40,
-        "quran": 42,
-        "total": 200,
-        "percentage": 40.0
-    }
-]
+{
+    "students": [
+        {
+            "admissionNumber": "M2023001",
+            "name": "John Doe",
+            "class": "10th Grade",
+            "subjects": [
+                {"name": "Arabic", "marks": 85, "grade": "A"},
+                {"name": "Quran Studies", "marks": 78, "grade": "B+"},
+                {"name": "Islamic History", "marks": 92, "grade": "A+"},
+                {"name": "Mathematics", "marks": 88, "grade": "A"},
+                {"name": "Science", "marks": 82, "grade": "B+"}
+            ]
+        },
+        {
+            "admissionNumber": "M2023002",
+            "name": "Jane Smith",
+            "class": "9th Grade",
+            "subjects": [
+                {"name": "Arabic", "marks": 90, "grade": "A+"},
+                {"name": "Quran Studies", "marks": 85, "grade": "A"},
+                {"name": "Islamic History", "marks": 88, "grade": "A"},
+                {"name": "Mathematics", "marks": 94, "grade": "A+"},
+                {"name": "Science", "marks": 89, "grade": "A"}
+            ]
+        }
+    ]
+}
