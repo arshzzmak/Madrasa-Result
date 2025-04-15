@@ -8,6 +8,7 @@
             "division": "A",
             "attendance": 62,
             "total_working_days": 171,
+            "rank": "",
             "total_subject": 7,
             "subjects": [
                 {"subject": "الأخلاق", "Mcq": 60, "Written": 40},
@@ -19,6 +20,25 @@
                 {"subject": "VIVA", "Written": 99}
             ]
         },
-        // ... other students
+        {
+            "admission_number": "ON24015",
+            "date_of_birth": "24-Jul-18",
+            "name": "MUHAMMED FAIHAN FAVAZ",
+            "class": "2",
+            "division": "A",
+            "attendance": 64,
+            "total_working_days": 171,
+            "rank": "",
+            "total_subject": 7,
+            "subjects": [
+                {"subject": "الأخلاق", "Mcq": 60, "Written": 40},
+                {"subject": "العقيدة", "Mcq": 60, "Written": 39},
+                {"subject": "لسان القرآن", "Mcq": 57, "Written": 40},
+                {"subject": "الفقه", "Mcq": 60, "Written": 39},
+                {"subject": "قرآن", "Written": 50},
+                {"subject": "حفظ", "Written": 50},
+                {"subject": "VIVA", "Written": 100}
+            ]
+        }
     ]
 }
