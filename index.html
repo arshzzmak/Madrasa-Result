@@ -3,41 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madrasa Exam Results</title>
+    <title>IZZATHUL ISLAM MADRASA - Results</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>IZZATHUL ISLAM MADRASA</h1>
+            <h2>Exam Results 2023-2024</h2>
+        </header>
 
-    <!-- First Interface: Search Box -->
-    <div id="searchContainer">
-        <h1>Madrasa Exam Results</h1>
-        <h2>Enter your Admission Number to check results</h2>
-        <input type="text" id="admissionNo" placeholder="Enter Admission Number">
-        <button onclick="searchResult()">Submit</button>
-    </div>
+        <div class="search-box">
+            <input type="text" id="admissionNumber" placeholder="Enter Admission Number">
+            <button onclick="searchResult()">Search</button>
+        </div>
 
-    <!-- Second Interface: Result Display (Hidden Initially) -->
-    <div id="resultContainer" class="hidden">
-        <h2>Exam Results</h2>
-        <p><strong>Name:</strong> <span id="studentName"></span></p>
-        <p><strong>Admission Number:</strong> <span id="studentId"></span></p>
-        <p><strong>Class:</strong> <span id="studentClass"></span></p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Subject</th>
-                    <th>Marks</th>
-                </tr>
-            </thead>
-            <tbody id="marksTable"></tbody>
-        </table>
-
-        <p id="status"></p>
-        <button onclick="goBack()">Back</button>
+        <div id="result" class="result-container"></div>
     </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>
