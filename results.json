@@ -1,28 +1,95 @@
 {
     "students": [
         {
-            "admissionNumber": "M2023001",
-            "name": "John Doe",
-            "class": "10th Grade",
+            "admission_number": "ON24014",
+            "date_of_birth": "22-Nov-17",
+            "name": "MUHAMMED ZAYAN UP",
+            "class": "2",
+            "division": "A",
+            "attendance": 62,
+            "total_working_days": 171,
+            "rank": "",
+            "total_subject": 7,
             "subjects": [
-                {"name": "Arabic", "marks": 85, "grade": "A"},
-                {"name": "Quran Studies", "marks": 78, "grade": "B+"},
-                {"name": "Islamic History", "marks": 92, "grade": "A+"},
-                {"name": "Mathematics", "marks": 88, "grade": "A"},
-                {"name": "Science", "marks": 82, "grade": "B+"}
+                {
+                    "subject": "الأخلاق",
+                    "Mcq": 60,
+                    "Written": 40
+                },
+                {
+                    "subject": "العقيدة",
+                    "Mcq": 57,
+                    "Written": 30
+                },
+                {
+                    "subject": "لسان القرآن",
+                    "Mcq": 60,
+                    "Written": 38
+                },
+                {
+                    "subject": "الفقه",
+                    "Mcq": 60,
+                    "Written": 38
+                },
+                {
+                    "subject": "قرآن",
+                    "Written": 43
+                },
+                {
+                    "subject": "حفظ",
+                    "Written": 43
+                },
+                {
+                    "subject": "VIVA",
+                    "Written": 99
+                }
             ]
         },
         {
-            "admissionNumber": "M2023002",
-            "name": "Jane Smith",
-            "class": "9th Grade",
+            "admission_number": "ON24015",
+            "date_of_birth": "24-Jul-18",
+            "name": "MUHAMMED FAIHAN FAVAZ",
+            "class": "2",
+            "division": "A",
+            "attendance": 64,
+            "total_working_days": 171,
+            "rank": "",
+            "total_subject": 7,
             "subjects": [
-                {"name": "Arabic", "marks": 90, "grade": "A+"},
-                {"name": "Quran Studies", "marks": 85, "grade": "A"},
-                {"name": "Islamic History", "marks": 88, "grade": "A"},
-                {"name": "Mathematics", "marks": 94, "grade": "A+"},
-                {"name": "Science", "marks": 89, "grade": "A"}
+                {
+                    "subject": "الأخلاق",
+                    "Mcq": 60,
+                    "Written": 40
+                },
+                {
+                    "subject": "العقيدة",
+                    "Mcq": 60,
+                    "Written": 39
+                },
+                {
+                    "subject": "لسان القرآن",
+                    "Mcq": 57,
+                    "Written": 40
+                },
+                {
+                    "subject": "الفقه",
+                    "Mcq": 60,
+                    "Written": 39
+                },
+                {
+                    "subject": "قرآن",
+                    "Written": 50
+                },
+                {
+                    "subject": "حفظ",
+                    "Written": 50
+                },
+                {
+                    "subject": "VIVA",
+                    "Written": 100
+                }
             ]
         }
+        // Add other students following the same structure
     ]
 }
