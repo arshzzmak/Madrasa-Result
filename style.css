@@ -1,126 +1,105 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', serif;
+/* Base Styles */
+:root {
+    --islamic-green: #006400;
+    --gold-accent: #D4AF37;
+    --cream-bg: #FFFDD0;
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: var(--cream-bg);
+    font-family: 'Amiri', 'Times New Roman', serif;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 20px auto;
+.madrasa-header {
+    text-align: center;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    border-radius: 5px;
+    background: linear-gradient(to right, var(--islamic-green), #003300);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.logo-container {
+.logo-section {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: center;
+    gap: 20px;
     padding: 15px;
-    background-color: #1a472a;
-    border-radius: 5px;
 }
 
-.logo {
+.header-logo {
     height: 80px;
-    margin-right: 20px;
-    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
+    width: auto;
+    border-radius: 50%;
+    padding: 5px;
+    background: white;
 }
 
-.header-text h1 {
-    color: #d4af37;
-    font-size: 28px;
+.madrasa-name {
+    color: var(--gold-accent);
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-.address {
-    color: #fff;
-    font-size: 16px;
-    margin-top: 5px;
+.madrasa-address {
+    color: white;
+    font-size: 1.1rem;
+    margin-top: 8px;
 }
 
-h2 {
+.exam-title {
+    color: var(--gold-accent);
+    margin-top: 15px;
+    font-size: 1.8rem;
+    border-bottom: 3px solid var(--gold-accent);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Search Section */
+.search-section {
     text-align: center;
-    color: #1a472a;
-    margin-bottom: 25px;
-    font-size: 24px;
-    border-bottom: 2px solid #d4af37;
-    padding-bottom: 10px;
+    margin: 40px 0;
 }
 
-.search-box {
-    text-align: center;
-    margin: 30px 0;
-}
-
-input[type="text"] {
-    padding: 12px;
+.search-input {
+    padding: 12px 20px;
     width: 300px;
-    border: 2px solid #1a472a;
-    border-radius: 5px;
+    border: 2px solid var(--islamic-green);
+    border-radius: 25px;
     font-size: 16px;
-    margin-right: 10px;
+    background: white;
+    transition: all 0.3s ease;
 }
 
-button {
-    padding: 12px 25px;
-    background-color: #1a472a;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 0 8px var(--gold-accent);
+}
+
+.search-button {
+    padding: 12px 30px;
+    background: var(--islamic-green);
+    color: white;
+    border: 2px solid var(--gold-accent);
+    border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
-    border: 2px solid #d4af37;
+    margin-left: 10px;
+    transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #0d2b1a;
+.search-button:hover {
+    background: var(--gold-accent);
+    color: var(--islamic-green);
 }
 
+/* Results Section */
 .result-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
     padding: 25px;
-    background-color: #f8f8f8;
-    border-radius: 5px;
     margin-top: 20px;
-    border: 1px solid #ddd;
-}
-
-/* Rest of the previous styles remain with color adjustments */
-
-.marks-table th {
-    background-color: #1a472a;
-    color: #fff;
-}
-
-.total-row {
-    background-color: #e8f5e9;
-}
-
-.attendance-info {
-    border-top: 2px solid #1a472a;
-}
-
-@media (max-width: 768px) {
-    .logo-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .logo {
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-    
-    input[type="text"] {
-        width: 100%;
-        margin-bottom: 15px;
-    }
+    border: 2px solid var(--islamic-green);
 }
